@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://kfefypu6rl6a"]
+
+[ext_resource type="Script" uid="uid://c71n16y8jx3tl" path="res://Scripts/Resource/ResourceHarvestable.gd" id="1_dvdaq"]
+[ext_resource type="Script" uid="uid://kll0m0noa12x" path="res://Scripts/common/OutlinePresenter.gd" id="2_1tb32"]
+[ext_resource type="Shader" uid="uid://ddpkfdwro4c5m" path="res://shaders/outline.gdshader" id="3_xi1fe"]
+[ext_resource type="Script" uid="uid://dq0lqf0gxoj3q" path="res://Scripts/Resource/ResourceHover.gd" id="4_xi1fe"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cpcu8"]
+height = 1.0144043
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvdaq"]
+albedo_color = Color(0.37773958, 0.34382537, 0.29279727, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e0den"]
+material = SubResource("StandardMaterial3D_dvdaq")
+height = 1.0
+
+[node name="Stone" type="StaticBody3D" unique_id=2090754498 groups=["Harvestable"]]
+script = ExtResource("1_dvdaq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=502906660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0057373047, 0)
+shape = SubResource("CylinderShape3D_cpcu8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=614388058]
+mesh = SubResource("CylinderMesh_e0den")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=592587159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3074319, 0)
+text = "5"
+font_size = 50
+
+[node name="OutlinePresenter" type="Node" parent="." unique_id=1888984633]
+script = ExtResource("2_1tb32")
+shader = ExtResource("3_xi1fe")
+color = Color(0.6801619, 0.69438547, 3.85046e-07, 1)
+width = 0.05
+mesh_paths = Array[NodePath]([NodePath("../MeshInstance3D")])
+
+[node name="ResourceHover" type="Node" parent="." unique_id=2032509372]
+script = ExtResource("4_xi1fe")
+presenter_path = NodePath("../OutlinePresenter")
