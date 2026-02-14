@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://2tlggajnbt1q"]
+[gd_scene format=3 uid="uid://2tlggajnbt1q"]
 
-[ext_resource type="PackedScene" uid="uid://dyy7smyj1k2pq" path="res://Scene/Test_Unit.tscn" id="1_j4qrl"]
 [ext_resource type="Texture2D" uid="uid://dtu47r7lkxn6w" path="res://grid_texture.png" id="1_lttqn"]
 [ext_resource type="PackedScene" uid="uid://kfefypu6rl6a" path="res://Scene/Stone.tscn" id="2_4kvl3"]
 [ext_resource type="Script" uid="uid://dmapoxkkm8ufm" path="res://Scripts/Player/Crosshair.gd" id="3_06yma"]
+[ext_resource type="PackedScene" uid="uid://c17sijq73cwcg" path="res://Scene/Test_Unit_without_AnimationPlayer.tscn" id="4_lee88"]
 [ext_resource type="Script" uid="uid://do6mapkqatt25" path="res://Scripts/Player/SelectionController.gd" id="4_lttqn"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_lwscp"]
@@ -64,11 +64,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.049431, 0.99999905, 15.69
 [node name="Stone4" parent="Environment/NavigationRegion3D" unique_id=1220807529 instance=ExtResource("2_4kvl3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.550095, 0.99999905, 15.696684)
 
-[node name="CharacterBody3D" parent="Environment" unique_id=647478704 instance=ExtResource("1_j4qrl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.065, 0.25, -0.068)
+[node name="CharacterBody3D3" parent="Environment" unique_id=1407931210 instance=ExtResource("4_lee88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4375508, 0.25, 0)
 
-[node name="CharacterBody3D2" parent="Environment" unique_id=1508933382 instance=ExtResource("1_j4qrl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5796604, 0.25, -0.068)
+[node name="CharacterBody3D4" parent="Environment" unique_id=647478704 instance=ExtResource("4_lee88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7765238, 0.25, 0)
+
+[node name="CharacterBody3D5" parent="Environment" unique_id=1948841581 instance=ExtResource("4_lee88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7845585, 0.25, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=1843822775]
 transform = Transform3D(1, 0, 0, 0, 0.78750545, 0.6163077, 0, -0.6163077, 0.78750545, 0, 11.573372, 20.56882)

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Minion
 
-@onready var anim_player: AnimationPlayer = $Rig/AnimationPlayer
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var machine: StateMachine = $HFSM
 
 func _ready():
